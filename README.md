@@ -1,51 +1,99 @@
-Clipboard Setup Guide
+# ClipboardApp
 
-IMPORTANT: Enable Accessibility Permissions
+Simple and lightweight clipboard manager for macOS.
 
-For keyboard shortcut (Cmd+Shift+V) to work, you MUST grant ClipboardPro accessibility permissions:
+ClipboardApp helps you quickly access and reuse your clipboard history using a clean popup interface and keyboard shortcuts.
 
-STEP 1: Open System Settings
-- Click Apple menu → System Settings
+---
 
-STEP 2: Navigate to Privacy & Security
-- Left sidebar → Privacy & Security
+## ✨ Features
 
-STEP 3: Enable Accessibility
-- Find "Accessibility" in the list
-- Click on it
-- Click the "+" button
-- Navigate to: ./Clipboardapp/
-- Select "Clipboard.app"
+* 📋 Clipboard history tracking
+* ⚡ Fast popup with hotkey (`Cmd + Shift + V`)
+* ⌨️ Navigate with keyboard (↑ ↓)
+* ↩️ Press Enter to paste instantly
+* 🪶 Lightweight & minimal
 
-- Navigate to: /Users/YOUR_USERNAME/Clipboardapp/
-- Select "Clipboard.app"
-- Click "Open"
-- If prompted, enter your password
+---
 
-STEP 4: Check "Input Monitoring" (macOS 12+)
-- Still in Privacy & Security
-- Find "Input Monitoring" 
-- Add Clipboard.app the same way
+## 🚀 Installation
 
-STEP 5: Restart the app
-- Close Clipboard completely
-- Add Clipboard.app the same way
+### Option 1 — Install via Homebrew (Recommended)
 
-STEP 5: Restart the app
-- Close ClipboardPro completely
-- Reopen it from Terminal or Finder
+```bash
+brew tap ay01231/clipboardapp
+brew install --cask clipboardapp
+```
 
-STEP 6: Test
-- Copy some text (Cmd+C in any app)
-- Click in a text field in another app
-- Press Cmd+Shift+V
-- Watch terminal for debug output
-- If you see "Cmd+Shift+V detected!", keyboard monitoring is working
+---
 
-ALTERNATIVE: Use Menu Bar Button
+### Option 2 — Direct install via URL
 
-While you set up permissions, you can use the menu bar:
-1. App is running (icon in menu bar: 📋)
-2. Click the icon
-3. Select "Open Clipboard"
-4. Paste selected item using Space/Enter
+```bash
+brew install --cask https://github.com/ay01231/ClipboardApp/releases/latest/download/ClipboardApp.zip
+```
+
+---
+
+### Option 3 — Manual install
+
+1. Download the latest release from:
+   https://github.com/ay01231/ClipboardApp/releases
+
+2. Extract the zip file
+
+3. Move the app to Applications:
+
+```bash
+mv ClipboardApp.app /Applications/
+```
+
+4. Open the app:
+
+```bash
+open /Applications/ClipboardApp.app
+```
+
+---
+
+## ⌨️ Usage
+
+| Action         | Shortcut          |
+| -------------- | ----------------- |
+| Open Clipboard | `Cmd + Shift + V` |
+| Navigate items | `↑ / ↓`           |
+| Paste selected | `Enter`           |
+| Close Popup    | `Esc `            |
+
+
+---
+
+## ⚠️ First Run (Important)
+
+If macOS blocks the app:
+
+```bash
+xattr -rd com.apple.quarantine /Applications/ClipboardApp.app
+```
+
+---
+
+## 🔧 Requirements
+
+* macOS
+* Swift
+* Homebrew (for installation)
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 👤 Author
+
+Created by [@ay01231](https://github.com/ay01231)
+
+---

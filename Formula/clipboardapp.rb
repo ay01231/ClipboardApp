@@ -6,7 +6,7 @@ class Clipboardapp < Formula
   version "1.0.0"
 
   def install
-    prefix.install "Clipboard.app"
+    prefix.install Dir["*.app"]
   end
 
   def caveats

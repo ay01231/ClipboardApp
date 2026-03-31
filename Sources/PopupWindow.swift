@@ -51,30 +51,29 @@ final class PopupWindow: NSWindowController, NSTableViewDelegate, NSTableViewDat
         window?.makeFirstResponder(table)
     }
 
-    @objc
-    private func selectItem() {
+@objc
+private func selectItem() {
 
-        let row = table.selectedRow
-        guard row >= 0 else { return }
+    let row = table.selectedRow
+    guard row >= 0 else { return }
+    let item = data[row]
+    let pb = NSPasteboard.general
+    ClipboardStore.shared.markInternalChange()
+    pb.clearContents()
 
-        let item = data[row]
-        let pb = NSPasteboard.general
-
-        pb.clearContents()
-
-        if let text = item.text {
-            pb.setString(text, forType: .string)
-        } else if let image = item.image {
-            pb.writeObjects([image])
-        }
-
-        window?.orderOut(nil)
-        NSApp.hide(nil)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            ClipboardService.shared.simulatePaste()
-        }
+    if let text = item.text {
+        pb.setString(text, forType: .string)
+    } else if let image = item.image {
+        pb.writeObjects([image])
     }
+
+    window?.orderOut(nil)
+    NSApp.hide(nil)
+
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        ClipboardService.shared.simulatePaste()
+    }
+}
 
     func numberOfRows(in tableView: NSTableView) -> Int {
         data.count

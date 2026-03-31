@@ -30,7 +30,7 @@ final class HotkeyManager {
         )
 
         if status != noErr {
-            print("❌ Failed to register hotkey")
+            print("Failed to register hotkey")
         }
 
         var eventType = EventTypeSpec(

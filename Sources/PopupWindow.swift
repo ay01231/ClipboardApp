@@ -45,10 +45,15 @@ final class PopupWindow: NSWindowController, NSTableViewDelegate, NSTableViewDat
         table.reloadData()
 
         if !data.isEmpty {
-            table.selectRowIndexes(IndexSet(integer: 0), byExtendingSelection: false)
-        }
+        table.selectRowIndexes(IndexSet(integer: 0), byExtendingSelection: false)
+        table.scrollRowToVisible(0)
+    }
 
         window?.makeFirstResponder(table)
+    }
+    
+    func performEnterAction() {
+    selectItem()
     }
 
 @objc

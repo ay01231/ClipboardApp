@@ -50,22 +50,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc
     private func showPopup() {
-
+    
         if popup == nil {
             popup = PopupWindow()
         }
-
+    
         popup?.reload()
-
+    
         NSApp.setActivationPolicy(.regular)
         NSApp.activate(ignoringOtherApps: true)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-
-            guard let window = self.popup?.window else { return }
-
-            window.level = .floating
-            window.makeKeyAndOrderFront(nil)
+    
+        guard let window = popup?.window else { return }
+    
+        window.level = .floating
+        window.center()
+        window.makeKeyAndOrderFront(nil)
+    
+        DispatchQueue.main.async {
             window.makeFirstResponder(self.popup?.table)
         }
     }

@@ -1,4 +1,4 @@
-ClipboardPro Setup Guide
+Clipboard Setup Guide
 
 IMPORTANT: Enable Accessibility Permissions
 
@@ -15,17 +15,17 @@ STEP 3: Enable Accessibility
 - Click on it
 - Click the "+" button
 - Navigate to: ./Clipboardapp/
-- Select "ClipboardPro.app"
+- Select "Clipboard.app"
 - Click "Open"
 - If prompted, enter your password
 
 STEP 4: Check "Input Monitoring" (macOS 12+)
 - Still in Privacy & Security
 - Find "Input Monitoring" 
-- Add ClipboardPro.app the same way
+- Add Clipboard.app the same way
 
 STEP 5: Restart the app
-- Close ClipboardPro completely
+- Close Clipboard completely
 - Reopen it from Terminal or Finder
 
 STEP 6: Test

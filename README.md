@@ -88,7 +88,7 @@ xattr -rd com.apple.quarantine /Applications/ClipboardApp.app
 
 ## 📄 License
 
-MIT License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 

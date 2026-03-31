@@ -14,7 +14,6 @@ STEP 3: Enable Accessibility
 - Find "Accessibility" in the list
 - Click on it
 - Click the "+" button
-<<<<<<< HEAD
 - Navigate to: ./Clipboardapp/
 - Select "Clipboard.app"
 
